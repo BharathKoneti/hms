@@ -3,7 +3,7 @@ $(document).ready(function () {
     var table
 
     function addPatient(data) {
-
+        console.log("Creating patient... " , data)
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -17,6 +17,8 @@ $(document).ready(function () {
             "processData": false,
             "data": JSON.stringify(data)
         }
+
+        console.log("settings.." , settings)
 
         $.ajax(settings).done(function (response) {
             $('.modal.in').modal('hide')
@@ -174,7 +176,7 @@ swal({
 $('#detailform input,textarea').val("")
         $('#myModal').modal().one('shown.bs.modal', function (e) {
 
-console.log('innn')
+//console.log('innn')
             $("#savethepatient").off("click").on("click", function(e) {
             console.log("inn")
             var instance = $('#detailform').parsley();

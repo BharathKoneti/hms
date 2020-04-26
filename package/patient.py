@@ -20,8 +20,9 @@ class Patients(Resource):
 
     def post(self):
         """api to add the patient in the database"""
-
+        print("sid: Received request to add patient")
         patientInput = request.get_json(force=True)
+        print(patientInput)
         pat_first_name=patientInput['pat_first_name']
         pat_last_name = patientInput['pat_last_name']
         pat_insurance_no = patientInput['pat_insurance_no']
